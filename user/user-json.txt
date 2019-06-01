@@ -1,0 +1,67 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# SGE
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Questions Collection [/user]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        {
+           "code": 200
+           "data": [
+                       {
+                           "id": 1
+                           "type": "1",
+                           "name": "d",
+                           "status": "0",
+                           "email": "d",
+                           "city": "a",
+                           "state": 2,
+                           "street": "a",
+                           "number": "a",
+                           "telephones": "a"
+                       }
+                   ]
+        }
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+                           
+                           "type": "1",
+                           "name": "d",
+                           "status": "0",
+                           "email": "d",
+                           "city": "a",
+                           "state": 2,
+                           "street": "a",
+                           "number": "a",
+                           "telephones": "a"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /user
+
+    + Body
+    {
+           "code": 200
+           "data": [
+                       {
+                           "id": 1
+                           }
+                    ]
+        }
